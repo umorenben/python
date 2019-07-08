@@ -1,0 +1,26 @@
+#PROGRAM TO SORT AND ADD COMMA TO END OF LINES IN A TEXT FILE
+#STEPS TO RUN SUCCESSFULLY
+#1. Ensure the file and this code file are in the same directory or folder
+#2. Change 'cdla.csv' file name to your own file name
+#3. Change 'cdlaNew.csv' file name to your desire new file name
+#4. Run the program
+
+
+mycommalist = list() #New list to add sorted list from file
+###read in myfile from file
+filename = 'beforeaddcomma.csv'
+with open (filename) as fin:
+    for line in fin:
+            mycommalist.append(line.strip() + ',')
+
+###sort myfile
+mycommalist.sort()
+print(mycommalist)
+
+###write sorted myfile to file
+filename = 'afteraddcomma.csv'
+with open (filename, 'w') as fout:
+    for myfil in mycommalist:
+        fout.write (myfil + '\n')
+
+print("Program completed successfully\nPlease for your new file"
